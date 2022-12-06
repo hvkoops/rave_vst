@@ -63,27 +63,3 @@ jobs:
           name: RAVE_VST_MacOS
           path: build/rave-vst_artefacts/Release
 
-
-  windows_build:
-    runs-on: windows-latest
-    steps:
-      - name: Clone the repository
-        uses: actions/checkout@v3
-        with:
-          submodules: recursive
-
-      - name: Setup the build
-        run: |
-          mkdir -p build
-          cd build
-          cmake .. -DCMAKE_BUILD_TYPE=Release
-
-      - name: Build
-        working-directory: build
-        run: cmake --build . --config Release -j 4
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: RAVE_VST_Windows
-          path: build/rave-vst_artefacts/Release
