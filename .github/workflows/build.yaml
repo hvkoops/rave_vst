@@ -40,7 +40,7 @@ jobs:
 
 
   macos_build:
-    runs-on: macOS-latest
+    runs-on: macOS-11
     steps:
       - name: Clone the repository
         uses: actions/checkout@v3
